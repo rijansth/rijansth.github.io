@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Rijan Shrestha — Graphic &amp; Multimedia Designer in Dubai</title>
-<meta name="description" content="Rijan Shrestha designs brands for Dubai's luxury, real estate, beauty, e-commerce and SaaS businesses: identity, packaging, social content, motion and AI visuals.">
+<meta name="description" content="Rijan Shrestha designs brands for Dubai's luxury, real estate, beauty, e-commerce and SaaS businesses: identity, packaging, social, motion and AI visuals.">
 <meta name="author" content="Rijan Shrestha">
 <link rel="canonical" href="https://rijansth.github.io/">
 <meta name="theme-color" content="#0E0E0E">
@@ -66,7 +66,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;
-  padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px));overflow-x:clip;-webkit-font-smoothing:antialiased}
+  padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px));overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
 img{max-width:100%}
 [hidden]{display:none!important}
@@ -76,6 +76,7 @@ a{color:inherit}
 h1,h2,h3{margin:0;text-wrap:balance;font-weight:600}
 p{margin:0}
 em.s{font-family:var(--f-serif);font-style:italic;font-weight:500;color:var(--red-hi)}
+.nb{white-space:nowrap}   /* keeps a hyphenated word such as e-commerce on one line */
 .eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .btn{display:inline-flex;align-items:center;gap:.75rem;padding:.375rem 1.25rem .375rem .375rem;border-radius:62.4375rem;background:var(--red);color:var(--on-accent);text-decoration:none;font-weight:600;font-size:.9375rem;border:0;cursor:pointer;transition:background .2s}
 .btn .ar{width:2.125rem;height:2.125rem;border-radius:50%;background:var(--on-accent);color:var(--red);display:grid;place-items:center;transition:transform .3s}
@@ -517,6 +518,10 @@ dialog.cs::backdrop{background:rgba(5,5,5,.86);backdrop-filter:blur(.375rem)}
   @keyframes hxPerson{to{scale:1.1;opacity:.35}}
   .hx-sur,.hx-badge{animation:hxUp linear both;animation-timeline:scroll(root);animation-range:0 70vh}
   @keyframes hxUp{to{translate:0 -5.625rem;opacity:0}}
+  /* the floating chips keep bobbing and fade out with the rest, so none is left hanging by the nav */
+  .hx-chip{animation:bob 5s ease-in-out infinite,chipFade linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 55vh}
+  .hx-chip.c2{animation-delay:-1.6s,0s}
+  @keyframes chipFade{to{opacity:0}}
   @keyframes heroSub{to{translate:0 -2.5rem;opacity:0}}
   /* the CTA band opens up and its background name slides */
   .band{animation:open linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
@@ -617,7 +622,7 @@ dialog.cs::backdrop{background:rgba(5,5,5,.86);backdrop-filter:blur(.375rem)}
     <div class="hx-stage" id="portrait">
       <div class="hx-glow" aria-hidden="true"></div>
       <div class="hx-name" aria-hidden="true">RIJAN</div>
-      <div class="hx-person"><img id="photo" src="img/rijan-3d.webp" width="700" height="1548" alt="Rijan Shrestha as a 3D character" fetchpriority="high" decoding="async"></div>
+      <div class="hx-person"><img id="photo" src="img/rijan-3d.webp" width="700" height="1548" alt="Rijan Shrestha as a 3D character" fetchpriority="high" decoding="sync"></div>
       <div class="hx-sur" aria-hidden="true">Shrestha</div>
       <span class="hx-chip c1" aria-hidden="true"><i></i>Brand Identity</span>
       <span class="hx-chip c2" aria-hidden="true"><i></i>Motion &amp; AI Video</span>
@@ -684,7 +689,7 @@ dialog.cs::backdrop{background:rgba(5,5,5,.86);backdrop-filter:blur(.375rem)}
     <div class="about">
       <div>
         <span class="eyebrow">About</span>
-        <h2 class="h2" id="about-h" style="margin-top:.875rem">I design brands for Dubai's <em class="s">luxury</em>, real estate, beauty, e-commerce and SaaS businesses.</h2>
+        <h2 class="h2" id="about-h" style="margin-top:.875rem">I design brands for Dubai's <em class="s">luxury</em>, real estate, beauty, <span class="nb">e-commerce</span> and SaaS businesses.</h2>
         <p class="lead">From the logo to the 15-second ad: identity, packaging, social posts and the motion that runs on them, all from one desk, so every piece looks like the same brand. Today I'm the in-house designer for Avarten Group in Dubai, across real estate, investment, e-commerce, cosmetics, a digital marketing agency and an AI marketing SaaS. I work in the full Adobe suite alongside AI image and video tools, and for five years I also taught design, editing and VFX.</p>
         <a class="btn ghost" href="https://www.behance.net/b_maxsth" target="_blank" rel="noopener"><span class="ar"><svg class="i"><use href="#arr-ne"/></svg></span>Full portfolio on Behance</a>
       </div>
