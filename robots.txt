@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rijansth.github.io/sitemap.xml
