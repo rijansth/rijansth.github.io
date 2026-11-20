@@ -104,7 +104,7 @@ function media(p,i){
   if(p.bt) return brandTile(p);
   const ph=artPH(p,i);
   if(!p.img) return ph;
-  return ph+`<img src="${esc(p.img)}" alt="${esc(p.t)}" loading="lazy" decoding="async">`;
+  return ph+`<img src="${esc(p.img)}" alt="${esc(p.t)} — design by Rijan Shrestha" loading="lazy" decoding="async">`;
 }
 const arrNE='<svg class="i"><use href="#arr-ne"/></svg>';
 
